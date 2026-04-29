@@ -52,28 +52,96 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
-  /* ── CONTACT FORM ── */
+  /* ── CONTACT FORM → DISCORD WEBHOOK ── */
+  // ⚠️  Paste your NEW Discord Webhook URL here after regenerating it
+  const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1498874412685070438/dOnDqjRPC3GQMHgD3sWUjK-d_nn7P8IJ7_w6bVVaD3qMw4wdlxXtIa_ifll47Suuw8VQ';
+
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
-      const name  = document.getElementById('name').value.trim();
+      const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const company = document.getElementById('company').value.trim();
+      const service = document.getElementById('service')
+        ? document.getElementById('service').value.trim()
+        : 'Not specified';
+      const details = document.getElementById('details')
+        ? document.getElementById('details').value.trim()
+        : '';
 
+      // ── Validation ──────────────────────────────────────
       if (!name || !email || !company) {
         btn.textContent = 'Fill required fields ✗';
         btn.style.background = '#ef4444';
-        setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 2000);
+        btn.style.color = '#fff';
+        setTimeout(() => {
+          btn.textContent = 'Send Message →';
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 2500);
         return;
       }
 
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#22c55e';
-      btn.style.color = '#000';
-      console.log('Contact form submitted', { name, email, company });
-      setTimeout(() => { form.reset(); btn.textContent = 'Send Message →'; btn.style.background = ''; btn.style.color = ''; }, 3000);
+      // ── Sending state ────────────────────────────────────
+      btn.textContent = 'Transmitting…';
+      btn.disabled = true;
+      btn.style.opacity = '0.75';
+
+      // ── Rich Discord embed payload ───────────────────────
+      const payload = {
+        username: 'ASL Lead Bot',
+        avatar_url: 'https://adityasecuritylabs.tech/hero_bg.png',
+        embeds: [{
+          title: '🛡️ New Engagement Request',
+          color: 0x00d4ff,           // cyan — matches site brand
+          fields: [
+            { name: '👤 Name', value: name, inline: true },
+            { name: '🏢 Company', value: company, inline: true },
+            { name: '📧 Email', value: email, inline: false },
+            { name: '🔧 Service Needed', value: service || 'Not specified', inline: true },
+            { name: '📝 Message', value: details || '*Not provided*', inline: false },
+          ],
+          footer: { text: 'Aditya Security Labs · adityasecuritylabs.tech' },
+          timestamp: new Date().toISOString(),
+        }]
+      };
+
+      try {
+        await fetch(DISCORD_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        btn.textContent = '✓ Request Received';
+        btn.style.background = '#22c55e';
+        btn.style.color = '#000';
+        btn.style.opacity = '1';
+
+        setTimeout(() => {
+          form.reset();
+          btn.textContent = 'Send Message →';
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 3500);
+
+      } catch (err) {
+        btn.textContent = '✗ Network Error — Retry';
+        btn.style.background = '#ef4444';
+        btn.style.color = '#fff';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        console.error('[ASL] Discord webhook failed:', err);
+
+        setTimeout(() => {
+          btn.textContent = 'Send Message →';
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 3000);
+      }
     });
   }
 
