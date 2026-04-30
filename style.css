@@ -93,6 +93,7 @@ button { -webkit-tap-highlight-color: transparent; }
   font-weight: 700; font-size: 1.1rem;
   letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--text);
+  user-select: none; -webkit-user-select: none;
 }
 .nav-logo span { color: var(--cyan); }
 .nav-logo .status {
@@ -105,12 +106,13 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,0.4)} 50%{opacity:0.6;box-shadow:0 0 0 6px rgba(0,212,255,0)} }
 
-.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; user-select: none; -webkit-user-select: none; }
 .nav-links li a {
   font-family: var(--font-mono);
   font-size: 0.7rem; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--text3);
   transition: color 0.2s;
+  user-select: none; -webkit-user-select: none;
 }
 .nav-links li a:hover { color: var(--cyan); }
 
@@ -121,6 +123,7 @@ button { -webkit-tap-highlight-color: transparent; }
   color: var(--cyan); padding: 0.5rem 1.2rem;
   transition: background 0.2s, color 0.2s;
   position: relative; overflow: hidden;
+  user-select: none; -webkit-user-select: none;
 }
 .nav-cta::before {
   content: '';
@@ -214,6 +217,7 @@ button { -webkit-tap-highlight-color: transparent; }
   border: none; cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  user-select: none; -webkit-user-select: none;
 }
 .btn-primary:hover {
   transform: translateY(-2px);
@@ -228,6 +232,7 @@ button { -webkit-tap-highlight-color: transparent; }
   color: var(--text2); padding: 0.85rem 1.75rem;
   cursor: pointer; background: transparent;
   transition: border-color 0.2s, color 0.2s;
+  user-select: none; -webkit-user-select: none;
 }
 .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
 
