@@ -52,6 +52,18 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
+  /* ── $50K LINEAR-STYLE MOUSE GLOW EFFECT ── */
+  const cards = document.querySelectorAll('.svc-card, .cve-item, .hud-video-wrapper');
+  document.addEventListener('mousemove', e => {
+    for (const card of cards) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    }
+  });
+
   /* ── CONTACT FORM → DISCORD WEBHOOK ── */
   // ⚠️  Paste your NEW Discord Webhook URL here after regenerating it
   const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1498874412685070438/dOnDqjRPC3GQMHgD3sWUjK-d_nn7P8IJ7_w6bVVaD3qMw4wdlxXtIa_ifll47Suuw8VQ';
