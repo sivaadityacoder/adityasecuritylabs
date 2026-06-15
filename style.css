@@ -85,7 +85,7 @@ em { font-style: normal; color: var(--accent); }
   color: var(--text); padding: 0.5rem 1rem;
   background: var(--card); transition: all 0.2s;
 }
-.nav-cta:hover { background: var(--text); color: var(--bg); }
+.nav-links li a.nav-cta:hover { background: var(--text); color: var(--bg); }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 0.5rem; cursor: pointer; background: none; border: none; }
 .hamburger span { width: 22px; height: 1.5px; background: var(--text); display: block; transition: all 0.3s; }
