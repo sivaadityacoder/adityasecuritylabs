@@ -64,9 +64,10 @@
     }
   });
 
-  /* ── CONTACT FORM → DISCORD WEBHOOK ── */
-  // ⚠️  Paste your NEW Discord Webhook URL here after regenerating it
+  /* ── CONTACT FORM → DISCORD + TELEGRAM ── */
   const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1498874412685070438/dOnDqjRPC3GQMHgD3sWUjK-d_nn7P8IJ7_w6bVVaD3qMw4wdlxXtIa_ifll47Suuw8VQ';
+  const TG_TOKEN = '8290253432:AAF3SeqU6Wy8m2Ph7E75xb03KbMCBsJXEIQ';
+  const TG_CHAT_ID = '1440570080';
 
   const form = document.getElementById('contact-form');
   if (form) {
@@ -120,12 +121,26 @@
         }]
       };
 
+      // ── Telegram message ─────────────────────────────────
+      const tgText = `🛡️ *New Engagement Request*\n\n👤 *Name:* ${name}\n🏢 *Company:* ${company}\n📧 *Email:* ${email}\n🔧 *Service:* ${service || 'Not specified'}\n📝 *Message:* ${details || 'Not provided'}`;
+
       try {
-        await fetch(DISCORD_WEBHOOK, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
+        await Promise.all([
+          fetch(DISCORD_WEBHOOK, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          }),
+          fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: TG_CHAT_ID,
+              text: tgText,
+              parse_mode: 'Markdown',
+            }),
+          }),
+        ]);
 
         btn.textContent = '✓ Request Received';
         btn.style.background = '#22c55e';
@@ -146,7 +161,7 @@
         btn.style.color = '#fff';
         btn.style.opacity = '1';
         btn.disabled = false;
-        console.error('[ASL] Discord webhook failed:', err);
+        console.error('[ASL] Notification failed:', err);
 
         setTimeout(() => {
           btn.textContent = 'Send Message →';
@@ -166,6 +181,6 @@
   });
 
   console.log('%cAditya Security Labs — System Online', 'color:#00d4ff;font-family:monospace;font-size:14px;');
-  console.log('%c4 NIST CVEs · BSI/CERT-Bund · Google Fuchsia · EU Gov. Bounty', 'color:#f5a623;font-family:monospace;font-size:11px;');
+  console.log('%c6+ CVEs & GHSAs · BSI/CERT-Bund · CERT-EE · GitHub Security', 'color:#f5a623;font-family:monospace;font-size:11px;');
 
 })();
