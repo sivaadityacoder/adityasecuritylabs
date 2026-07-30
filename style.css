@@ -276,6 +276,7 @@ section { padding: 8rem 5%; position: relative; z-index: 2; }
 .flabel { font-size: 0.85rem; font-weight: 500; color: var(--text2); margin-bottom: 0.4rem; display: block; }
 .finput, .fselect, .ftextarea { width: 100%; background: var(--card); border: 1px solid var(--border2); border-radius: 6px; color: var(--text); padding: 0.85rem 1rem; font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
 .finput:focus, .fselect:focus, .ftextarea:focus { border-color: var(--border); background: rgba(255,255,255,0.03); }
+.fselect option { background-color: var(--bg); color: var(--text); }
 .ftextarea { min-height: 120px; resize: vertical; }
 
 /* ── FOOTER ── */
