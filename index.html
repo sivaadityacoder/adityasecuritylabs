@@ -1,359 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Security Labs — Autonomous AI Infrastructure Security</title>
-    <meta name="description"
-        content="The Zero-Noise Autonomous Security Engine for AI Startups. Integrating AST-driven SAST and live-fire Docker DAST into enterprise CI/CD pipelines.">
-    <meta name="keywords"
-        content="AI Security, DAST, SAST, ASL V4.5, DevSecOps, Penetration Testing, Autonomous Security">
-    <meta property="og:title" content="Aditya Security Labs — Enterprise AI Security">
-    <meta property="og:description"
-        content="Zero noise. Verified Zero-Days only. Automating $50k Elite Pentest depth in 15 seconds.">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <title>Aditya Security Labs — Exclusive AI Infrastructure Security</title>
+    <meta name="description" content="Verified Zero-Day research and boutique advisory for elite AI innovators.">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .skills-container { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+        .skill-pill { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 400; padding: 0.6rem 1.5rem; border: 1px solid var(--border); border-radius: 100px; color: var(--text-muted); transition: all 0.3s ease; background: rgba(255,255,255,0.02); }
+        .skill-pill:hover { color: var(--text-main); border-color: var(--accent); background: transparent; }
+        .row-desc { font-family: var(--font-sans); font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 300; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-logo-block { font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem; }
+        .footer-section h4 { font-family: var(--font-sans); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-main); margin-bottom: 1.5rem; font-weight: 500; }
+        .footer-section ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+        .footer-section a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-section a:hover { color: var(--accent); }
+    </style>
 </head>
-
 <body>
 
-    <!-- HUD overlays -->
-    <div class="hex-bg"></div>
-    <div class="scan-line"></div>
-
-    <!-- NAV -->
-    <nav id="navbar">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo">
-                Aditya<span>Security</span>Labs
-                <span class="status" title="System Online"></span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#platform">The Engine</a></li>
-                <li><a href="#services">Solutions</a></li>
-                <li><a href="#research">Traction</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="nav-cta" id="nav-cta-btn">Initiate Pilot</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+    <nav>
+        <a href="#hero" class="nav-logo">Aditya Security Labs</a>
+        <ul class="nav-links">
+            <li><a href="#brands">Trusted By</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#activity">Research</a></li>
+            <li><a href="#advisory">Advisory</a></li>
+        </ul>
     </nav>
 
-    <!-- HERO -->
-    <section id="hero">
-        <div class="arc-glow"></div>
-        <div class="hero-content">
-            <div class="hero-left" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    ASL V6 Engine Deployed · Global AI Security
-                </div>
-                <h1 class="hero-title">
-                    Securing AI<br>
-                    <em>Infrastructure</em>
-                    <span class="sub">// At the Speed of DevOps</span>
-                </h1>
-                <p class="hero-desc" style="max-width: 600px;">
-                    <strong style="color:var(--text);font-weight:500;">Aditya Security Labs</strong> offers the ASL V6 Engine: an open-source AI Red-Teaming & Exploit Verification Engine. Combining AST Contextual Filtering (98% noise reduction) with live Docker Runtime Verification for verified Zero-Days only. 
+    <main>
+        
+        <!-- HERO -->
+        <section id="hero">
+            <div class="container fade-up">
+                <span class="hero-pre">Boutique Security Research</span>
+                <h1 class="hero-title">Securing elite AI infrastructure with <i>precision</i>.</h1>
+                <p class="hero-desc">
+                    We build research-grade vulnerability assessment tools and provide exclusive, high-touch advisory for national digital infrastructure and AI innovators.
                 </p>
-                <div class="hero-btns" style="justify-content:center;">
-                    <a href="#contact" class="btn-primary">Request CI/CD Pilot</a>
-                    <a href="#research" class="btn-secondary">View Traction →</a>
+                <div class="hero-actions" style="align-items: flex-start; flex-direction: column; gap: 2rem;">
+                    <a href="#contact" class="btn-solid">Engage the Lab</a>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start;">
+                        <a href="https://github.com/sivaadityacoder/asl-v6" target="_blank" class="btn-link">Free on GitHub: ASL V6 Engine ↗</a>
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Open-source AI red-teaming. MIT License. 98% noise reduction.</span>
+                    </div>
                 </div>
-                <div style="margin-top: 2.5rem;">
-                    <a href="https://launchnest.io/p/asl-v6" target="_blank">
-                      <img src="https://launchnest.io/badge/asl-v6.svg?variant=listed"
-                           alt="ASL V6 on LaunchNest"
-                           width="220"
-                           height="56" />
+            </div>
+        </section>
+
+        <!-- BRANDS (TRUST BAR) -->
+        <section id="brands" style="min-height: auto; padding: 10vh 0; border-top: 1px solid var(--border);">
+            <div class="container fade-in">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 3rem; text-align: center; text-transform: uppercase;">Trusted By National Infrastructure & AI Teams</div>
+                <div class="trust-bar" style="margin-top: 0; border: none; padding-top: 0; justify-content: center; gap: 4rem;">
+                    <div class="trust-logo" style="font-size: 1.8rem;">NIIS</div>
+                    <div class="trust-logo" style="font-size: 1.8rem;">Qdrant</div>
+                    <div class="trust-logo" style="font-size: 1.8rem;">CERT-Bund</div>
+                    <div class="trust-logo" style="font-size: 1.8rem;">X-Road</div>
+                    <div class="trust-logo" style="font-size: 1.8rem;">Flowise</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WHO WE SERVE -->
+        <section class="who-we-serve fade-up">
+            <div class="container">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 2rem; text-align: center; text-transform: uppercase;">Who We Serve</div>
+                <div class="serve-grid">
+                    <div class="serve-item">AI Startups (Seed → Series B)</div>
+                    <div class="serve-item">LLM Infrastructure Companies</div>
+                    <div class="serve-item">EU Government Contractors</div>
+                    <div class="serve-item">Fintech on Rails</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES (SKILLS) -->
+        <section id="capabilities">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Methodology</span>
+                    <h2 class="section-title">Core Capabilities</h2>
+                </div>
+                
+                <div class="fade-up">
+                    <p class="grid-desc" style="max-width: 600px; margin-bottom: 2rem;">
+                        We deploy advanced, research-driven methodologies that go far beyond automated scanning, focusing exclusively on complex, high-impact vulnerabilities.
+                    </p>
+                    <div class="skills-container">
+                        <span class="skill-pill">AI Agent Threat Modeling</span>
+                        <span class="skill-pill">AST-driven SAST</span>
+                        <span class="skill-pill">Runtime Sandbox Escapes</span>
+                        <span class="skill-pill">Prompt Injection Analysis</span>
+                        <span class="skill-pill">Deserialization RCEs</span>
+                        <span class="skill-pill">Zero-Day Vulnerability Research</span>
+                        <span class="skill-pill">Source Code Audits</span>
+                        <span class="skill-pill">DevSecOps Integration</span>
+                        <span class="skill-pill">Docker Runtime Verification</span>
+                        <span class="skill-pill">EU AI Act Compliance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECENT RESEARCH -->
+        <section id="activity">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Activity</span>
+                    <h2 class="section-title">Recent Research</h2>
+                </div>
+                
+                <div class="fade-up">
+                    <div class="row-item" style="padding: 2.5rem 0;">
+                        <div class="row-meta">Aug 2026</div>
+                        <div class="row-title" style="font-size: 1.5rem;">ASL V6 Engine</div>
+                        <div class="row-desc" style="margin-top:0;">Open-sourced on GitHub</div>
+                    </div>
+                    <div class="row-item" style="padding: 2.5rem 0;">
+                        <div class="row-meta">Jul 2026</div>
+                        <div class="row-title" style="font-size: 1.5rem;">Qdrant</div>
+                        <div class="row-desc" style="margin-top:0;">Paid security research engagement. Vulnerability disclosed and remediated.</div>
+                    </div>
+                    <div class="row-item" style="padding: 2.5rem 0; border-bottom: 1px solid var(--border);">
+                        <div class="row-meta">Jan 2026</div>
+                        <div class="row-title" style="font-size: 1.5rem;">NIIS / X-Road</div>
+                        <div class="row-desc" style="margin-top:0;">Paid security research engagement. CVE disclosed and patched in v7.7.1.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ZERO-DAYS -->
+        <section id="research">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Zero-Days</span>
+                    <h2 class="section-title">Verified Impact</h2>
+                    <p class="section-mono" style="color: var(--accent); margin-top: 1rem;">5 Official Disclosures</p>
+                </div>
+
+                <div class="fade-up">
+                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22038" target="_blank" class="row-item" style="display: block;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                            <div class="row-meta">CVSS 8.1 / AutoGPT</div>
+                            <div class="row-meta">CVE-2026-22038</div>
+                        </div>
+                        <div class="row-title">Secrets Leak via Logging</div>
+                        <div class="row-desc">Critical exposure of OpenAI API keys via unsanitized logging mechanisms in autonomous agents.</div>
+                    </a>
+
+                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67146" target="_blank" class="row-item" style="display: block;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                            <div class="row-meta">HIGH / Enterprise Rails</div>
+                            <div class="row-meta">CVE-2025-67146</div>
+                        </div>
+                        <div class="row-title">Database SQL Injection</div>
+                        <div class="row-desc">Paired attack chain enabling full database read/write access via complex SQL injection.</div>
+                    </a>
+
+                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67147" target="_blank" class="row-item" style="display: block;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                            <div class="row-meta">HIGH / Enterprise Rails</div>
+                            <div class="row-meta">CVE-2025-67147</div>
+                        </div>
+                        <div class="row-title">Authentication Bypass</div>
+                        <div class="row-desc">Flaw in session validation allowing unauthenticated attackers to reach privileged admin endpoints.</div>
+                    </a>
+
+                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68621" target="_blank" class="row-item" style="display: block;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                            <div class="row-meta">CVSS 7.4 / Trilium Notes</div>
+                            <div class="row-meta">CVE-2025-68621</div>
+                        </div>
+                        <div class="row-title">Timing Attack Auth Bypass</div>
+                        <div class="row-desc">Sophisticated timing attack against the authentication protocol yielding unauthorized access.</div>
+                    </a>
+
+                    <a href="https://github.com/advisories/GHSA-x58f-9m57-qc4m" target="_blank" class="row-item" style="display: block; border-bottom: 1px solid var(--border);">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                            <div class="row-meta">CRITICAL / FlowiseAI</div>
+                            <div class="row-meta">GHSA-x58f-9m57</div>
+                        </div>
+                        <div class="row-title">Sandbox Escape</div>
+                        <div class="row-desc">Arbitrary code execution via complete sandbox escape in the LLM orchestration layer.</div>
                     </a>
                 </div>
-                <div class="hero-stats" style="justify-content:center; flex-wrap:wrap;">
-                    <div class="stat">
-                        <div class="stat-n">98%</div>
-                        <div class="stat-l">Noise Reduction</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-n">AST</div>
-                        <div class="stat-l">Code Analysis</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-n">DAST</div>
-                        <div class="stat-l">Docker Verification</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-n">6+</div>
-                        <div class="stat-l">CVEs & GHSAs</div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- TRUST BAR -->
-    <div id="trust-bar">
-        <div class="trust-items">
-            <div class="trust-item"><strong>X-Road</strong> Core Infrastructure</div>
-            <span class="trust-sep">·</span>
-            <div class="trust-item"><strong>BSI / CERT-Bund</strong> Germany</div>
-            <span class="trust-sep">·</span>
-            <div class="trust-item"><strong>Google</strong> Fuchsia OS</div>
-            <span class="trust-sep">·</span>
-            <div class="trust-item"><strong>EU Gov.</strong> Bounty Awarded</div>
-            <span class="trust-sep">·</span>
-            <div class="trust-item"><strong>6+</strong> CVEs and GHSAs</div>
-            <span class="trust-sep">·</span>
-            <div class="trust-item"><strong>MSME</strong> Govt. Registered</div>
-        </div>
-    </div>
 
-    <!-- THE ASL V6 ENGINE PLATFORM -->
-    <section id="platform" class="alt-bg">
-        <div class="container">
-            <div class="fade">
-                <span class="sec-tag">// The Platform</span>
-                <h2 class="sec-title">ASL V6 Engine</h2>
-                <p style="color:var(--text2);max-width:600px;font-size:1.05rem;font-weight:400;margin-bottom:3rem;">Research-grade vulnerability assessment and red-teaming engine for Python and AI agent codebases. Free and open-source under the MIT License.</p>
-            </div>
-            <div class="engine-grid fade">
-                <div class="engine-step">
-                    <div class="step-num">01</div>
-                    <h3>10 Security Analyzers</h3>
-                    <p>Examines code for OWASP Top 10 LLM and Agent vulnerabilities, including prompt injection sinks, goal hijacking, and unsafe code execution.</p>
+        <!-- OPERATOR PROFILE -->
+        <section id="operator">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Leadership</span>
+                    <h2 class="section-title">The Founder</h2>
                 </div>
-                <div class="engine-step">
-                    <div class="step-num">02</div>
-                    <h3>AST Contextual Filtering</h3>
-                    <p>Parses Python syntax trees to ignore test suites, mock files, and docstrings. This eliminates around 98% of false positive alerts.</p>
-                </div>
-                <div class="engine-step">
-                    <div class="step-num">03</div>
-                    <h3>Live Docker Verification</h3>
-                    <p>Runs untrusted code snippets inside isolated ephemeral Docker containers to confirm whether an injection is exploitable in a live runtime.</p>
-                </div>
-                <div class="engine-step">
-                    <div class="step-num">04</div>
-                    <h3>Remediation Patches</h3>
-                    <p>Generates structured code fixes and patch suggestions. Works offline using deterministic AST rules, or connects to NVIDIA developer API.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-        <div class="container">
-            <div class="fade">
-                <span class="sec-tag">// Services</span>
-                <h2 class="sec-title">Security & Advisory</h2>
-                <p style="color:var(--text2);max-width:520px;font-size:0.92rem;font-weight:300;margin-bottom:0;">
-                    🔴 Currently accepting 3 advisory clients for Q3 2026. One researcher. Direct work. No agency overhead.</p>
-            </div>
-            <div class="svc-grid fade">
-                <div class="svc-card">
-                    <div class="svc-num">01</div>
-                    <div class="svc-name">Managed Assessment</div>
-                    <p class="svc-desc"><strong>$1,500 fixed price</strong><br>Full ASL V6 scan, verified findings report, and remediation guidance. Delivered within 5 business days.</p>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-num">02</div>
-                    <div class="svc-name">Advisory Retainer</div>
-                    <p class="svc-desc"><strong>$2,500 / month</strong><br>Monthly architecture review, manual vulnerability discovery, and remediation pull requests written directly for your codebase.</p>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-num">03</div>
-                    <div class="svc-name">Emergency Assessment</div>
-                    <p class="svc-desc"><strong>$5,000 fixed</strong><br>1-week pre-launch code audit or post-incident review with proof-of-concept exploits and remediation guidance.</p>
-                </div>
-                <div class="svc-card">
-                    <div class="svc-num">04</div>
-                    <div class="svc-name">EU AI Act Documentation</div>
-                    <p class="svc-desc"><strong>$3,500 - $5,000 fixed</strong><br>Technical robustness testing and adversarial documentation designed for European compliance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- THREAT INTELLIGENCE / CVES -->
-    <section id="research">
-        <div class="container">
-            <div class="fade">
-                <span class="sec-tag">// Threat Intelligence</span>
-                <h2 class="sec-title">Verified Zero-Days</h2>
-                <p style="color:var(--text2);max-width:550px;font-size:0.95rem;margin-bottom:3rem;">The ASL Engine is built on the exact methodologies used by our founder to secure national digital infrastructure and elite AI platforms. Every finding is verifiable via NIST or official vendor acknowledgement.</p>
-            </div>
-
-            <div class="cve-grid fade" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
                 
-                <!-- AutoGPT -->
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22038" target="_blank" rel="noopener" class="cve-item" style="margin: 0; display: block;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <span class="severity critical">CVSS 8.1</span>
-                        <span class="cve-id">CVE-2026-22038</span>
+                <div class="grid-2 fade-up">
+                    <div>
+                        <h3 class="grid-title">Siva Aditya Panuganti</h3>
+                        <p class="grid-desc" style="max-width: 500px; margin-bottom: 2rem;">
+                            Lead Researcher and Principal Architect at Aditya Security Labs. Specializing in advanced vulnerability research, zero-day discovery, and the security architecture of autonomous AI agents.
+                        </p>
+                        <div class="grid-desc" style="display: flex; flex-direction: column; gap: 1rem; font-weight: 300;">
+                            <div><strong style="color: var(--text-main); font-weight: 500;">Verified Research:</strong> 4 Published CVEs, 1 GHSA</div>
+                            <div><strong style="color: var(--text-main); font-weight: 500;">Paid Engagements:</strong> NIIS (€2,000), Qdrant ($1,000)</div>
+                            <div><strong style="color: var(--text-main); font-weight: 500;">Acknowledgments:</strong> BSI Germany (CERT-Bund)</div>
+                        </div>
                     </div>
-                    <div class="cve-title" style="margin-bottom: 0.5rem;">AutoGPT — Secrets Leak</div>
-                    <p style="font-size: 0.85rem; color: var(--text2); margin-bottom: 1rem; line-height: 1.5;">Autonomous logging subsystem exposed active API keys in plaintext, allowing full credential theft.</p>
-                    <div class="cve-meta" style="justify-content: space-between; border-top: 1px solid var(--border2); padding-top: 0.8rem;">
-                        <span>AI Agent Platform</span>
-                        <span style="color: var(--success);">✓ Patched</span>
-                    </div>
-                </a>
-
-                <!-- FlowiseAI -->
-                <a href="https://github.com/advisories/GHSA-x58f-9m57-qc4m" target="_blank" rel="noopener" class="cve-item" style="margin: 0; display: block;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <span class="severity critical">CRITICAL</span>
-                        <span class="cve-id">GHSA-x58f-9m57-qc4m</span>
-                    </div>
-                    <div class="cve-title" style="margin-bottom: 0.5rem;">FlowiseAI — Sandbox Escape</div>
-                    <p style="font-size: 0.85rem; color: var(--text2); margin-bottom: 1rem; line-height: 1.5;">Sandbox escape allowing unauthenticated remote code execution on the underlying server infrastructure.</p>
-                    <div class="cve-meta" style="justify-content: space-between; border-top: 1px solid var(--border2); padding-top: 0.8rem;">
-                        <span>LLM Framework</span>
-                        <span style="color: var(--success);">✓ Patched</span>
-                    </div>
-                </a>
-
-                <!-- Trilium -->
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68621" target="_blank" rel="noopener" class="cve-item" style="margin: 0; display: block;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <span class="severity high">CVSS 7.4</span>
-                        <span class="cve-id">CVE-2025-68621</span>
-                    </div>
-                    <div class="cve-title" style="margin-bottom: 0.5rem;">Trilium Notes — Timing Attack</div>
-                    <p style="font-size: 0.85rem; color: var(--text2); margin-bottom: 1rem; line-height: 1.5;">Non-constant-time HMAC comparison allowed full hash recovery and unauthenticated remote auth bypass.</p>
-                    <div class="cve-meta" style="justify-content: space-between; border-top: 1px solid var(--border2); padding-top: 0.8rem;">
-                        <span>CWE-208</span>
-                        <span style="color: var(--success);">✓ Patched</span>
-                    </div>
-                </a>
-
-                <!-- LLaMmlein -->
-                <a href="https://github.com/advisories/GHSA-p97p-7x96-7wj5" target="_blank" rel="noopener" class="cve-item" style="margin: 0; display: block;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                        <span class="severity critical">CRITICAL</span>
-                        <span class="cve-id">GHSA-p97p-7x96-7wj5</span>
-                    </div>
-                    <div class="cve-title" style="margin-bottom: 0.5rem;">LLaMmlein — Deserialization RCE</div>
-                    <p style="font-size: 0.85rem; color: var(--text2); margin-bottom: 1rem; line-height: 1.5;">Insecure deserialization vulnerability allowing remote code execution via malicious payloads.</p>
-                    <div class="cve-meta" style="justify-content: space-between; border-top: 1px solid var(--border2); padding-top: 0.8rem;">
-                        <span>AI Inference</span>
-                        <span style="color: var(--success);">✓ Patched</span>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT / SKILLS -->
-    <section id="about" class="alt-bg">
-        <div class="container">
-            <div class="fade">
-                <span class="sec-tag">// Operator Profile</span>
-                <h2 class="sec-title">Siva Aditya Panuganti</h2>
-                <p
-                    style="color:var(--text2);max-width:600px;font-size:0.95rem;font-weight:300;line-height:1.8;margin-bottom:2rem;">
-                    I built Aditya Security Labs because I was tired of watching engineering teams waste hundreds of hours chasing theoretical vulnerabilities flagged by legacy scanners. By automating the exact techniques I used to secure 6+ CVEs and GHSAs in production AI systems, ASL empowers AI startups to ship fast and stay secure.
-                </p>
-            </div>
-            <div class="fade">
-                <span class="sec-tag" style="margin-bottom:1rem;">// Tools & Arsenal</span>
-                <div class="skills-wrap">
-                    <span class="skl">Burp Suite</span><span class="skl">OWASP ZAP</span>
-                    <span class="skl">Nmap</span><span class="skl">SQLmap</span>
-                    <span class="skl">Metasploit</span><span class="skl">Nuclei</span>
-                    <span class="skl">Gobuster</span><span class="skl">Ffuf</span>
-                    <span class="skl">Shodan</span><span class="skl">Wireshark</span>
-                    <span class="skl">Kali Linux</span><span class="skl">Python</span>
-                    <span class="skl">Bash</span><span class="skl">OWASP Top 10</span>
-                    <span class="skl">CVSS Scoring</span><span class="skl">Docker</span>
-                    <span class="skl">GitHub</span><span class="skl">CVE Research</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="container">
-            <div class="fade">
-                <span class="sec-tag">// Initiate Engagement</span>
-            </div>
-            <div class="contact-grid fade">
-                <div>
-                    <h2 class="contact-big">Let's Work<br><em>Together.</em></h2>
-                    <p style="color:var(--text2);font-weight:300;max-width:360px;font-size:0.92rem;line-height:1.8;">
-                        Tell me what you're building and what worries you about it. No sales call. No agency overhead. I
-                        respond within 24 hours.
-                    </p>
-                    <div class="soc-links">
-                        <a href="https://linkedin.com/in/sivaaditya-panuganti-b67484316" class="soc-link"
-                            target="_blank" rel="noopener">
-                            <div class="soc-icon">in</div> Siva Aditya Panuganti
-                        </a>
-                        <a href="https://www.instagram.com/root.asl/" class="soc-link" target="_blank" rel="noopener">
-                            <div class="soc-icon">ig</div> @root.asl
-                        </a>
-                        <a href="https://github.com/sivaadityacoder" class="soc-link" target="_blank" rel="noopener">
-                            <div class="soc-icon">&lt;/&gt;</div> github.com/sivaadityacoder
-                        </a>
-                        <a href="https://discord.gg/mApMZNa4" class="soc-link" target="_blank" rel="noopener">
-                            <div class="soc-icon">DC</div> discord.gg/mApMZNa4
-                        </a>
-                        <a href="mailto:adityasecuritylabs@gmail.com" class="soc-link">
-                            <div class="soc-icon">@</div> adityasecuritylabs@gmail.com
-                        </a>
+                    <div>
+                        <!-- TODO: Add founder headshot here. 400x500px, plain background. -->
+                        <div style="width: 100%; min-height: 350px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+                            <div style="font-family: var(--font-serif); font-size: 5rem; color: var(--border);">SA</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); text-align: center; text-transform: uppercase; letter-spacing: 0.1em;">Siva Aditya Panuganti<br>Founder & Lead Researcher</div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <form class="cform" id="contact-form">
-                        <div><label class="flabel">Full Name</label><input class="finput" id="name" name="name"
-                                type="text" placeholder="Your name" required></div>
-                        <div><label class="flabel">Email</label><input class="finput" id="email" name="email"
-                                type="email" placeholder="your@email.com" required></div>
-                        <div><label class="flabel">Company / Project</label><input class="finput" id="company"
-                                name="company" type="text" placeholder="Company or project name" required></div>
-                        <div>
-                            <label class="flabel">Service Needed</label>
-                            <select class="fselect" id="service" name="service">
-                                <option value="">Select…</option>
-                                <option>Managed Assessment ($1,500)</option>
-                                <option>Advisory Retainer ($2,500/mo)</option>
-                                <option>Emergency Security Assessment ($5,000)</option>
-                                <option>EU AI Act Documentation</option>
+            </div>
+        </section>
+
+        <!-- ADVISORY -->
+        <section id="advisory">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Consulting</span>
+                    <h2 class="section-title">Bespoke Advisory</h2>
+                </div>
+
+                <div class="grid-2 fade-up">
+                    <div class="grid-item">
+                        <div class="grid-meta">Managed Assessment</div>
+                        <h3 class="grid-title">$4,000</h3>
+                        <p class="grid-desc">Full ASL V6 scan, verified findings report, and comprehensive remediation guidance delivered directly to your engineering leadership in 5 days.</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-meta">Technical Retainer</div>
+                        <h3 class="grid-title">$5,000 / mo</h3>
+                        <p class="grid-desc">Ongoing architectural review and remediation. Vulnerability patches are written and submitted directly to your codebase as pull requests by our lead researcher.</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-meta">Emergency Assessment</div>
+                        <h3 class="grid-title">$8,000</h3>
+                        <p class="grid-desc">Expedited 1-week pre-launch code audit or immediate post-incident review accompanied by proof-of-concept exploits to verify remediation.</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-meta">EU AI Act</div>
+                        <h3 class="grid-title">$6,000 - $10,000</h3>
+                        <p class="grid-desc">Rigorous technical robustness testing mapped precisely to European AI Act compliance mandates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="process">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Process</span>
+                    <h2 class="section-title">How It Works</h2>
+                </div>
+                
+                <div class="grid-3 fade-up">
+                    <div class="grid-item">
+                        <div class="grid-meta">01 // Submit</div>
+                        <h3 class="grid-title" style="font-size: 1.5rem;">Request Audit</h3>
+                        <p class="grid-desc">Fill out the audit request. We respond within 24 hours with an NDA to secure your intellectual property.</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-meta">02 // Assess</div>
+                        <h3 class="grid-title" style="font-size: 1.5rem;">Engine & Manual Review</h3>
+                        <p class="grid-desc">We run the ASL V6 Engine and a rigorous manual review against your codebase. Typically completed in 3–5 business days.</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-meta">03 // Remediate</div>
+                        <h3 class="grid-title" style="font-size: 1.5rem;">Patch-Ready Findings</h3>
+                        <p class="grid-desc">You receive a verified findings report with patch-ready fixes, eliminating ambiguity for your engineering team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <div class="grid-2 fade-up">
+                    <div>
+                        <h2 class="section-title" style="margin-bottom: 2rem;">Request Audit.</h2>
+                        <p class="grid-desc" style="max-width: 400px; margin-bottom: 3rem;">
+                            All engagements begin with a confidential consultation to understand your application architecture, technology stack, and security objectives. Strict NDA provided before any code access.
+                        </p>
+                        
+                        <!-- URGENCY / SCARCITY -->
+                        <div style="margin-bottom: 2rem; padding: 1rem; border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); border-radius: 4px;">
+                            <span style="color: #ef4444; margin-right: 0.5rem; font-size: 0.8rem;">🔴</span>
+                            <strong style="color: var(--text-main); font-weight: 500;">Q3 2026 Availability:</strong> 2 advisory slots remaining. One researcher. Direct work.
+                        </div>
+
+                        <a href="mailto:contact@adityasecuritylabs.com" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px;">contact@adityasecuritylabs.com</a>
+                    </div>
+                    <div>
+                        <form id="contact-form" style="display: flex; flex-direction: column; gap: 2rem;">
+                            <div style="display: flex; gap: 2rem;">
+                                <input type="text" id="name" class="form-input" placeholder="Full Name" required style="flex: 1;">
+                                <input type="text" id="company" class="form-input" placeholder="Company" required style="flex: 1;">
+                            </div>
+                            <div style="display: flex; gap: 2rem;">
+                                <input type="email" id="email" class="form-input" placeholder="Work Email" required style="flex: 1;">
+                                <input type="text" id="role" class="form-input" placeholder="Role (e.g. CTO)" required style="flex: 1;">
+                            </div>
+                            <input type="text" id="tech-stack" class="form-input" placeholder="Technology Stack (e.g. Node.js, Python)">
+                            <select id="codebase-size" class="form-input" style="color: var(--text-muted); background: var(--bg);">
+                                <option value="" disabled selected>Approximate Lines of Code</option>
+                                <option value="< 10k">&lt; 10,000 LOC</option>
+                                <option value="10k - 50k">10,000 - 50,000 LOC</option>
+                                <option value="50k - 100k">50,000 - 100,000 LOC</option>
+                                <option value="> 100k">&gt; 100,000 LOC</option>
                             </select>
-                        </div>
-                        <div><label class="flabel">Message</label><textarea class="ftextarea" id="details"
-                                name="details"
-                                placeholder="Describe your project, tech stack, and security concerns…"></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary" id="submitBtn"
-                            style="border:none;width:100%;font-size:0.78rem;">Send Message →</button>
-                        <p style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text3);text-align:center;">
-                            Response within 24 hours · NDA provided before any code access</p>
-                    </form>
+                            <textarea id="details" class="form-input" placeholder="Application Description & Security Concerns..." style="min-height: 120px; resize: vertical;" required></textarea>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                                <button type="submit" id="submitBtn" class="btn-solid" style="border: none; cursor: pointer; align-self: flex-start;">Submit Audit Request</button>
+                                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: none;">Response within 24 business hours | NDA provided before code access</span>
+                                <p style="font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Prefer a direct conversation? <a href="mailto:contact@adityasecuritylabs.com?subject=Security%20Assessment%20Inquiry" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px;">Send a direct email →</a></p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-logo">Aditya<span>Security</span>Labs</div>
-        <p>© 2026 · Siva Aditya Panuganti · Vijayawada, AP, India</p>
-        <p>UDYAM-AP-03-0107216 · MSME Registered</p>
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Information</span>
+                    <h2 class="section-title">Common Questions</h2>
+                </div>
+                
+                <div class="grid-2 fade-up">
+                    <div class="grid-item">
+                        <h3 class="grid-title" style="font-size: 1.5rem;">Can you audit codebases outside Python?</h3>
+                        <p class="grid-desc">Yes. While ASL V6 specializes in Python and AI agents, our manual methodology applies to any web stack.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3 class="grid-title" style="font-size: 1.5rem;">Do you require source code access?</h3>
+                        <p class="grid-desc">Yes, for Managed Assessments and Retainers. Emergency Assessments can begin with a running application.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3 class="grid-title" style="font-size: 1.5rem;">What is your payment structure?</h3>
+                        <p class="grid-desc">50% upfront, 50% on delivery for fixed-price engagements. Retainers are billed monthly.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3 class="grid-title" style="font-size: 1.5rem;">Do you work with early-stage startups?</h3>
+                        <p class="grid-desc">Yes. We offer a reduced-scope assessment for seed-stage teams. Mention your funding stage in the request.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="display: block; padding-top: 6rem;">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo-block">Aditya Security Labs</div>
+                    <p style="text-transform: none; font-size: 0.85rem; line-height: 1.6; font-family: var(--font-sans);">
+                        Specialized manual security source code auditing for web applications and APIs. Identifying business logic vulnerabilities and authorization flaws before deployment.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#advisory">Source Code Auditing</a></li>
+                        <li><a href="#capabilities">Audit Methodology</a></li>
+                        <li><a href="#operator">About Founder</a></li>
+                        <li><a href="#contact">Request Audit</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="mailto:security@adityasecuritylabs.com">Responsible Disclosure</a></li>
+                        <li><a href="#contact">NDA Commitment</a></li>
+                        <li><a href="#contact">Source Code Security</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://discord.gg/ctZBaVQG" target="_blank">Discord Server</a></li>
+                        <li><a href="https://www.linkedin.com/in/sivaaditya-panuganti" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://github.com/sivaaditya" target="_blank">GitHub</a></li>
+                        <li><a href="mailto:contact@adityasecuritylabs.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 2rem; flex-wrap: wrap; gap: 1rem;">
+                <div>© 2026 · Siva Aditya Panuganti · Remote-first, EU timezone compatible · UDYAM-AP-03-0107216</div>
+                <div style="text-transform: none;">Manual security source code auditing | NDA-compliant operations | Confidential engagement</div>
+            </div>
+        </div>
     </footer>
 
     <script src="app.js"></script>
 </body>
-
 </html>
