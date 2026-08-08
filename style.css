@@ -353,3 +353,63 @@ footer {
     padding: 10vh 0;
     border-top: 1px solid var(--border);
 }
+
+
+/* ── SCROLLING MARQUEE ── */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg), transparent);
+}
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg), transparent);
+}
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: max-content;
+    animation: marquee-scroll 18s linear infinite;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+.marquee-item {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    padding: 0 3rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+.marquee-item:hover {
+    color: var(--text-main);
+}
+.marquee-sep {
+    color: var(--accent);
+    font-size: 1.2rem;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+@keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
