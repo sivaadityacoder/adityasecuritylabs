@@ -41,7 +41,7 @@
         `Name: ${name}\nCompany: ${company}\nRole: ${role}\nEmail: ${email}\n\nTech Stack: ${stack}\nCodebase Size: ${size}\n\nDetails:\n${details}`
       );
       
-      window.location.href = `mailto:contact@adityasecuritylabs.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:adityasecuritylabs@gmail.com?subject=${subject}&body=${body}`;
 
       setTimeout(() => {
         btn.textContent = 'Submit Audit Request';
