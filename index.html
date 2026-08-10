@@ -55,7 +55,7 @@
         <section id="brands" style="min-height: auto; padding: 5vh 0; border-top: 1px solid var(--border); overflow: hidden;">
             <div style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 2.5rem; text-align: center; text-transform: uppercase;">Trusted By National Infrastructure &amp; AI Teams</div>
             <div class="marquee-wrapper">
-                <div class="marquee-track">
+                <div class="marquee-track" aria-hidden="true">
                     <span class="marquee-item">NIIS</span>
                     <span class="marquee-sep">·</span>
                     <span class="marquee-item">Qdrant</span>
@@ -66,7 +66,6 @@
                     <span class="marquee-sep">·</span>
                     <span class="marquee-item">Flowise</span>
                     <span class="marquee-sep">·</span>
-                    <!-- Duplicate for seamless loop -->
                     <span class="marquee-item">NIIS</span>
                     <span class="marquee-sep">·</span>
                     <span class="marquee-item">Qdrant</span>
@@ -226,7 +225,8 @@
                             Lead Researcher and Principal Architect at Aditya Security Labs. Specializing in advanced vulnerability research, zero-day discovery, and the security architecture of autonomous AI agents.
                         </p>
                         <div class="grid-desc" style="display: flex; flex-direction: column; gap: 1rem; font-weight: 300;">
-                            <div><strong style="color: var(--text-main); font-weight: 500;">Verified Research:</strong> 4 Published CVEs, 1 GHSA</div>
+                            <div><strong style="color: var(--text-main); font-weight: 500;">Critical Findings:</strong> Base CVSS 9.8 (FlowiseAI sandbox escape) · CVSS 8.1 — AutoGPT CVE-2026-22038</div>
+                            <div><strong style="color: var(--text-main); font-weight: 500;">Verified Research:</strong> 4 Published CVEs, 1 GHSA · <a href="blog-autogpt-cvss81.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px;">Read the disclosure →</a></div>
                             <div><strong style="color: var(--text-main); font-weight: 500;">Paid Engagements:</strong> NIIS, Qdrant</div>
                             <div><strong style="color: var(--text-main); font-weight: 500;">Acknowledgments:</strong> BSI Germany (CERT-Bund)</div>
                         </div>
@@ -253,23 +253,23 @@
                 <div class="grid-2 fade-up">
                     <div class="grid-item">
                         <div class="grid-meta">Managed Assessment</div>
-                        <h3 class="grid-title">$4,000</h3>
+                        <h3 class="grid-title">€4,000</h3>
                         <p class="grid-desc">Full ASL V6 scan, verified findings report, and comprehensive remediation guidance delivered directly to your engineering leadership in 5 days.</p>
                     </div>
                     <div class="grid-item">
                         <div class="grid-meta">Technical Retainer</div>
-                        <h3 class="grid-title">$5,000 / mo</h3>
+                        <h3 class="grid-title">€5,000 / mo</h3>
                         <p class="grid-desc">Ongoing architectural review and remediation. Vulnerability patches are written and submitted directly to your codebase as pull requests by our lead researcher.</p>
                     </div>
                     <div class="grid-item">
                         <div class="grid-meta">Emergency Assessment</div>
-                        <h3 class="grid-title">$8,000</h3>
+                        <h3 class="grid-title">€8,000</h3>
                         <p class="grid-desc">Expedited 1-week pre-launch code audit or immediate post-incident review accompanied by proof-of-concept exploits to verify remediation.</p>
                     </div>
                     <div class="grid-item">
                         <div class="grid-meta">EU AI Act</div>
-                        <h3 class="grid-title">$6,000 - $10,000</h3>
-                        <p class="grid-desc">Rigorous technical robustness testing mapped precisely to European AI Act compliance mandates.</p>
+                        <h3 class="grid-title">€6,000 - €10,000</h3>
+                        <p class="grid-desc">Article 15 adversarial robustness testing for Annex III high-risk AI — legal tech, medical AI, biometric analysis, and autonomous systems.</p>
                     </div>
                 </div>
             </div>
@@ -316,7 +316,7 @@
                         <!-- URGENCY / SCARCITY -->
                         <div style="margin-bottom: 2rem; padding: 1rem; border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); border-radius: 4px;">
                             <span style="color: #ef4444; margin-right: 0.5rem; font-size: 0.8rem;">🔴</span>
-                            <strong style="color: var(--text-main); font-weight: 500;">Q3 2026 Availability:</strong> 2 advisory slots remaining. One researcher. Direct work.
+                            <strong style="color: var(--text-main); font-weight: 500;">Q3 2026 Availability:</strong> 2 advisory slots remaining. Next engagement start: <strong style="color: #ef4444;">August 25, 2026.</strong> One researcher. Direct work.
                         </div>
 
                         <a href="mailto:contact@adityasecuritylabs.com" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px;">contact@adityasecuritylabs.com</a>

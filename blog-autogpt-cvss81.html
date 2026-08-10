@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Found CVSS 8.1 in AutoGPT: API Keys in Logs — Aditya Security Labs</title>
+    <meta name="description" content="CVE-2026-22038. CVSS 8.1. AutoGPT was logging OpenAI API keys in plaintext. Here is exactly how I found it, what it means, and what you should check in your own codebase right now.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-container { max-width: 720px; margin: 0 auto; padding: 15vh 2rem 10vh; }
+        .blog-meta { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3rem; }
+        .blog-title { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 2rem; color: var(--text-main); }
+        .blog-body { font-family: var(--font-sans); font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); }
+        .blog-body p { margin-bottom: 1.8rem; }
+        .blog-body h2 { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .blog-body code { font-family: var(--font-mono); font-size: 0.9rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.2rem 0.5rem; border-radius: 3px; color: var(--accent); }
+        .blog-body pre { background: rgba(0,0,0,0.4); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; overflow-x: auto; margin: 2rem 0; }
+        .blog-body pre code { background: none; border: none; padding: 0; font-size: 0.85rem; color: #9fa8b0; }
+        .blog-body strong { color: var(--text-main); font-weight: 500; }
+        .cve-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.75rem; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: #ef4444; padding: 0.3rem 0.8rem; border-radius: 3px; margin-right: 1rem; }
+        .back-link { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 4rem; }
+        .back-link:hover { color: var(--accent); }
+        .action-box { border: 1px solid var(--accent); padding: 2rem; margin: 3rem 0; }
+        .action-box h3 { font-family: var(--font-sans); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Aditya Security Labs</a>
+    </nav>
+
+    <div class="blog-container">
+        <a href="index.html" class="back-link">← Back to home</a>
+
+        <div class="blog-meta">
+            <span class="cve-badge">CVE-2026-22038</span>
+            <span class="cve-badge" style="color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.1);">CVSS 8.1 HIGH</span>
+            August 2026 · Siva Aditya Panuganti
+        </div>
+
+        <h1 class="blog-title">How I Found CVSS 8.1 in AutoGPT:<br>API Keys in Logs</h1>
+
+        <div class="blog-body">
+
+            <p>AutoGPT was writing OpenAI API keys to stdout in plaintext. Every single run. One log aggregator, one misconfigured CloudWatch policy, one junior DevOps engineer — and a company's entire OpenAI billing account is compromised. This is CVE-2026-22038, CVSS 8.1.</p>
+
+            <h2>What AutoGPT Does</h2>
+
+            <p>AutoGPT Stagehand is an agentic framework for orchestrating multi-step LLM tasks. It manages API calls, memory, tool use, and task planning in autonomous loops. At scale, it processes hundreds of LLM calls per session — each one authenticated with an API key passed through the execution context.</p>
+
+            <h2>Where the Vulnerability Was</h2>
+
+            <p>The problem was in the logging subsystem. During agent initialization and tool execution, AutoGPT called <code>logger.info()</code> with the full configuration object — including the API key — without sanitizing sensitive fields first.</p>
+
+<pre><code># Vulnerable pattern (simplified)
+logger.info(f"Agent initialized with config: {agent_config}")
+# agent_config contained: {"openai_api_key": "sk-proj-...", ...}
+</code></pre>
+
+            <p>The key was never explicitly logged. It leaked because the config dict was passed directly to the logger as a format argument. In production environments with structured logging (Datadog, CloudWatch, Splunk), this meant API keys appeared in log streams visible to anyone with read access to the logging service.</p>
+
+            <h2>How I Found It</h2>
+
+            <p>I wasn't fuzzing. I was doing a source code review looking for secret handling patterns. My tool, ASL V6, builds an AST of the codebase and traces data flow from environment variable reads to output sinks — print statements, logging calls, HTTP responses.</p>
+
+            <p>It flagged <code>logger.info</code> calls where the argument included variables derived from <code>os.getenv("OPENAI_API_KEY")</code>. Manual confirmation took 15 minutes. The key was there, in the log, every time the agent started.</p>
+
+            <h2>The CVSS 8.1 Impact</h2>
+
+            <p>High. No authentication required to exploit — just access to the log stream, which in most organizations is shared infrastructure. An attacker reads the logs, extracts the key, and can make unlimited OpenAI API calls billed to the victim. In enterprise deployments with high-volume agent usage, this translates directly to financial damage.</p>
+
+            <h2>The Fix</h2>
+
+            <p>Patched in AutoGPT v0.6.46. The fix sanitizes configuration dictionaries before logging by redacting fields that match a secret key pattern (<code>*key*, *token*, *secret*, *password*</code>).</p>
+
+            <div class="action-box">
+                <h3>Check this in your own codebase right now</h3>
+                <p>Run this in your repo to find any logger calls that might be passing config objects with secrets:</p>
+<pre><code>grep -rn "logger\.\(info\|debug\|warning\)" . | grep -i "config\|key\|token\|secret"
+</code></pre>
+                <p>If you get results — open each one and verify the logged object doesn't contain sensitive fields. This takes 20 minutes and costs nothing.</p>
+            </div>
+
+            <p>If you're running an AI agent framework and haven't audited your logging pipeline, this is the first place to look. It's not glamorous. But it's where the real breaches start.</p>
+
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 3rem;">
+                Siva Aditya Panuganti · Founder, Aditya Security Labs<br>
+                <a href="index.html#contact" style="color: var(--accent);">Book a security review →</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
