@@ -1,0 +1,79 @@
+.section {
+  padding: 120px var(--gutter);
+  background: var(--bg);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.headingClip {
+  overflow: hidden;
+  margin-bottom: var(--sp-8);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: var(--size-2xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr 220px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-subtle);
+  align-items: center;
+  transition: background-color 180ms ease;
+  text-decoration: none;
+}
+
+.row:hover {
+  background-color: var(--surface);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--text-muted);
+}
+
+.project {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--accent); /* Accent rule 4: Recent research project names */
+}
+
+.status {
+  font-family: var(--font-sans);
+  font-size: var(--size-sm);
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 24px;
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .status {
+    text-align: left;
+  }
+}

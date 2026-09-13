@@ -1,0 +1,148 @@
+.section {
+  padding: 120px var(--gutter);
+  background: var(--bg);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.whoWeServe {
+  margin-bottom: 96px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.subHeadingClip {
+  overflow: hidden;
+  margin-bottom: var(--sp-4);
+}
+
+.subHeading {
+  font-family: var(--font-serif);
+  font-size: var(--size-xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.targetGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+.targetCard {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 24px var(--sp-3);
+  transition: background-color 180ms ease;
+}
+
+.targetCard:hover {
+  background-color: var(--surface);
+}
+
+.targetTitle {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--size-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+  display: block;
+}
+
+.headingClip {
+  overflow: hidden;
+  margin-bottom: var(--sp-3);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: var(--size-2xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.audience {
+  font-family: var(--font-sans);
+  font-size: var(--size-base);
+  color: var(--text-secondary);
+  max-width: 760px;
+  margin-bottom: var(--sp-8);
+  line-height: 1.7;
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 var(--sp-8);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 24px 0;
+  border-top: 1px solid var(--border-subtle);
+  transition: background-color 180ms ease;
+}
+
+.row:hover {
+  background-color: var(--surface);
+}
+
+.bulletDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .targetGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilitiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 64px 24px;
+  }
+  .targetGrid {
+    grid-template-columns: 1fr;
+  }
+  .heading {
+    font-size: 36px;
+  }
+}

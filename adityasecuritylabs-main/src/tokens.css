@@ -1,0 +1,45 @@
+/* CSS Custom Properties - Aditya Security Labs */
+:root {
+  --bg:              #080808;
+  --bg-raised:       #0F0F0F;
+  --surface:         #151515;
+  --border-subtle:   #1E1E1C;
+  --border:          #2A2A28;
+  --border-strong:   #3A3A38;
+  --text-primary:    #F4F2ED;
+  --text-secondary:  #B5B3AD;
+  --text-muted:      #82807A;
+  --text-disabled:   #5E5C56;
+  --accent:          #C9A466;
+  --danger:          #D94334;
+
+  --font-serif:    'EB Garamond', Georgia, serif;
+  --font-sans:     'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:     'IBM Plex Mono', monospace;
+
+  --size-xs:    11px;
+  --size-sm:    13px;
+  --size-base:  15px;
+  --size-md:    18px;
+  --size-lg:    24px;
+  --size-xl:    36px;
+  --size-2xl:   52px;
+  --size-3xl:   72px;
+  --size-4xl:   96px;
+
+  --sp-1:   8px;
+  --sp-2:  16px;
+  --sp-3:  24px;
+  --sp-4:  32px;
+  --sp-6:  48px;
+  --sp-8:  64px;
+  --sp-12: 96px;
+  --sp-16: 128px;
+  --sp-24: 192px;
+
+  --max-w:   1160px;
+  --gutter:   48px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
+}

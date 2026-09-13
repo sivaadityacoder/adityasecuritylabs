@@ -1,0 +1,141 @@
+.section {
+  padding: 120px var(--gutter);
+  background: var(--bg);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--size-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+  display: block;
+}
+
+.headingClip {
+  overflow: hidden;
+  margin-bottom: var(--sp-1);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: var(--size-2xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.subtext {
+  font-family: var(--font-sans);
+  font-size: var(--size-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--sp-8);
+  font-weight: 400;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.card {
+  padding: 28px 0;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  transition: background-color 180ms ease;
+  border-radius: 0;
+}
+
+.card:hover {
+  background-color: var(--surface);
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--text-muted);
+}
+
+.scoreBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.redDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--danger);
+  display: inline-block;
+}
+
+.cveId {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.vulnName {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.vulnLink {
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 150ms ease;
+}
+
+.vulnLink:hover {
+  opacity: 0.85;
+}
+
+.externalIcon {
+  font-size: 14px;
+  opacity: 0.6;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.vulnLink:hover .externalIcon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 24px;
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .vulnName {
+    font-size: 20px;
+  }
+}

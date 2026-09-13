@@ -1,0 +1,148 @@
+.section {
+  padding: 120px var(--gutter);
+  background: var(--bg);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.headingClip {
+  overflow: hidden;
+  margin-bottom: var(--sp-8);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: var(--size-2xl);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.brandLogoAvatar {
+  height: 48px;
+  width: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.bio {
+  font-family: var(--font-sans);
+  font-size: var(--size-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--sp-6);
+}
+
+.credentialsList {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.credRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.credLabel {
+  font-family: var(--font-sans);
+  font-size: var(--size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.credValue {
+  font-family: var(--font-sans);
+  font-size: var(--size-base);
+  color: var(--text-primary);
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--sp-8);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  transition: background-color 200ms linear;
+}
+
+.rightCol:hover {
+  background-color: var(--surface);
+}
+
+.highlightNumber {
+  font-family: var(--font-serif);
+  font-size: 80px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: var(--sp-3);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-strong);
+  margin-bottom: var(--sp-3);
+}
+
+.highlightLabel {
+  font-family: var(--font-sans);
+  font-size: var(--size-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 64px 24px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .highlightNumber {
+    font-size: 64px;
+  }
+}
