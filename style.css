@@ -141,10 +141,50 @@ section {
   transform: translateY(0);
 }
 
+/* ── EUROPEAN SOVEREIGN TRUST RIBBON ── */
+.eu-ribbon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  background: #0f172a;
+  color: #cbd5e1;
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 101;
+}
+.eu-ribbon-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.eu-ribbon-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: #94a3b8;
+}
+.eu-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  display: inline-block;
+  margin-right: 0.35rem;
+}
+
 /* ── NAVIGATION (CLEAN WHITE FROSTED GLASS) ── */
 nav {
   position: fixed;
-  top: 0;
+  top: 34px;
   left: 0;
   right: 0;
   height: var(--nav-h);
@@ -153,11 +193,11 @@ nav {
   align-items: center;
   padding: 0 5%;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
   transition: all 0.3s var(--ease-smooth);
 }
 
@@ -250,7 +290,7 @@ nav {
 
 /* ── HERO & COMPANY BANNER ── */
 #hero {
-  padding-top: calc(var(--nav-h) + 7vh);
+  padding-top: calc(34px + var(--nav-h) + 6vh);
   padding-bottom: 8vh;
   z-index: 1;
 }
@@ -465,6 +505,50 @@ nav {
   transform: scale(1.04);
 }
 
+/* European Research Dossier Tag */
+.dossier-header {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  z-index: 5;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+}
+.dossier-id {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.dossier-status {
+  color: #059669;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.dossier-status::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #059669;
+}
+
 /* Viewfinder Target Brackets (European Sovereign Blue) */
 .photo-viewfinder::before,
 .photo-viewfinder::after {
@@ -473,16 +557,16 @@ nav {
   width: 20px;
   height: 20px;
   border: 2px solid var(--accent);
-  opacity: 0.7;
+  opacity: 0.75;
   pointer-events: none;
   transition: all 0.3s var(--ease-smooth);
   z-index: 3;
 }
 .photo-viewfinder::before {
-  top: 14px;
+  bottom: 14px;
   left: 14px;
   border-right: none;
-  border-bottom: none;
+  border-top: none;
 }
 .photo-viewfinder::after {
   bottom: 14px;
@@ -491,7 +575,7 @@ nav {
   border-top: none;
 }
 .photo-viewfinder:hover::before {
-  top: 10px;
+  bottom: 10px;
   left: 10px;
   opacity: 1;
 }
@@ -901,6 +985,8 @@ footer {
 
 /* ── RESPONSIVE MEDIA QUERIES ── */
 @media (max-width: 900px) {
+  .eu-ribbon-right { display: none; }
+  .eu-ribbon { justify-content: center; font-size: 0.62rem; text-align: center; }
   .grid-2 { grid-template-columns: 1fr; gap: 2.5rem; }
   .grid-3 { grid-template-columns: 1fr; }
   .row-item { grid-template-columns: 1fr; gap: 0.5rem; padding: 2rem 0; }
@@ -922,4 +1008,6 @@ footer {
 
 @media (max-width: 600px) {
   .footer-grid { grid-template-columns: 1fr; }
+  .dossier-header { font-size: 0.58rem; padding: 0.25rem 0.5rem; }
+  #hero { padding-top: calc(34px + var(--nav-h) + 4vh); }
 }
