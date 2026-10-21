@@ -233,14 +233,15 @@
     },
     swamy: {
       name: 'Ainavilli Swamy Ganesh',
-      meta: 'Co-Founder & Security Engineering',
+      meta: 'Co-Founder & Head of Security Engineering',
       img: 'swamy_ganesh.jpg',
       objectPosition: 'center 20%',
-      desc: 'Co-Founder at Aditya Security Labs. Focusing on security engineering, systems architecture, secure code review pipelines, and scaling threat modeling for modern enterprise infrastructure.',
+      desc: 'Co-Founder and Head of Security Engineering at Aditya Security Labs. Specializing in secure systems architecture, automated code review pipelines, and scaling threat modeling for modern enterprise infrastructure and autonomous AI deployments.',
       highlights: [
-        '<strong>Core Competency:</strong> <span class="badge-pill badge-verified">AppSec</span> <span class="badge-pill badge-verified">Threat Modeling</span> High-Assurance Source Auditing',
-        '<strong>Systems & Cloud:</strong> Infrastructure Hardening, Cloud Security & Penetration Testing',
-        '<strong>Client Operations:</strong> Technical Assessment Delivery & Boutique Advisory'
+        '<strong>Systems Architecture & DevSecOps:</strong> <span class="badge-pill badge-verified">AppSec</span> <span class="badge-pill badge-verified">Threat Modeling</span> Automated security gates & zero-trust IAM',
+        '<strong>Cloud & Runtime Defense:</strong> Container sandboxing, Kubernetes cluster hardening & microservice boundary testing',
+        '<strong>Institutional Standards:</strong> Technical control implementation for <span class="badge-pill badge-verified">EU AI Act Art. 15</span> & NIS2 directive compliance',
+        '<strong>Assessment Delivery:</strong> High-assurance source code audits, rapid-response architecture reviews & remediation verification'
       ],
       link: 'https://www.linkedin.com/in/ainavilli-swamy-ganesh-7870112a8/'
     }
