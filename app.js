@@ -224,8 +224,8 @@
       objectPosition: 'center 15%',
       desc: 'Lead Researcher and Principal Architect at Aditya Security Labs. Specializing in advanced vulnerability research, zero-day discovery, and the security architecture of autonomous AI agents.',
       highlights: [
-        '<strong>Critical Zero-Days:</strong> Base CVSS 9.8 (FlowiseAI sandbox escape) · CVSS 8.1 (AutoGPT CVE-2026-22038)',
-        '<strong>Verified Research:</strong> 4 Published CVEs, 1 GHSA vulnerability advisory',
+        '<strong>Critical Zero-Days:</strong> <span class="badge-pill badge-critical">CVSS 9.8</span> FlowiseAI · <span class="badge-pill badge-high">CVSS 8.1</span> AutoGPT (CVE-2026-22038)',
+        '<strong>Verified Research:</strong> <span class="badge-pill badge-verified">4 CVEs</span> <span class="badge-pill badge-verified">1 GHSA</span> vulnerability advisory',
         '<strong>Commercial Auditing:</strong> Paid engagements with NIIS, Qdrant',
         '<strong>National Infrastructure:</strong> Security acknowledgments from BSI Germany (CERT-Bund)'
       ],
@@ -238,7 +238,7 @@
       objectPosition: 'center 20%',
       desc: 'Co-Founder at Aditya Security Labs. Focusing on security engineering, systems architecture, secure code review pipelines, and scaling threat modeling for modern enterprise infrastructure.',
       highlights: [
-        '<strong>Core Competency:</strong> Application Security, Threat Modeling & High-Assurance Source Auditing',
+        '<strong>Core Competency:</strong> <span class="badge-pill badge-verified">AppSec</span> <span class="badge-pill badge-verified">Threat Modeling</span> High-Assurance Source Auditing',
         '<strong>Systems & Cloud:</strong> Infrastructure Hardening, Cloud Security & Penetration Testing',
         '<strong>Client Operations:</strong> Technical Assessment Delivery & Boutique Advisory'
       ],
