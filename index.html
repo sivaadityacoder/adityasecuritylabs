@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Security Labs — Exclusive AI Infrastructure Security</title>
-    <meta name="description" content="Verified Zero-Day research and boutique advisory for elite AI innovators.">
+    <title>Aditya Security Labs — Web, AI, Android &amp; OSS Security</title>
+    <meta name="description" content="Elite manual source code auditing and vulnerability research for Web &amp; API, AI Infrastructure, Android Mobile, and Open-Source Software.">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,12 +27,17 @@
     </div>
 
     <nav>
-        <a href="#hero" class="nav-logo">Aditya Security Labs</a>
+        <a href="#hero" class="nav-logo">
+            <img src="logo.jpg" alt="Aditya Security Labs Logo" class="brand-logo-img">
+            <span>Aditya Security Labs</span>
+        </a>
         <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
             <li><a href="#operator">The Founders</a></li>
             <li><a href="#capabilities">Capabilities</a></li>
-            <li><a href="#activity">Research</a></li>
+            <li><a href="#research">CVE Research</a></li>
             <li><a href="#advisory">Advisory</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li>
                 <button id="sfx-toggle" class="sfx-pill" type="button" aria-label="Toggle Sound Effects">
                     <span class="sfx-dot"></span>
@@ -133,6 +140,81 @@
                     <div class="serve-item">Autonomous LLM Infrastructure</div>
                     <div class="serve-item">EU AI Act High-Risk Operators</div>
                     <div class="serve-item">Cross-Border Digital Rails</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIALIZED SECURITY SERVICES -->
+        <section id="services">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-pre">Core Specializations</span>
+                    <h2 class="section-title">Security Services</h2>
+                    <p class="grid-desc" style="max-width: 680px; margin-top: 1rem;">
+                        We deliver elite, research-driven security audits and manual vulnerability research across four core technological pillars, identifying high-impact vulnerabilities before malicious exploitation.
+                    </p>
+                </div>
+
+                <div class="grid-2 fade-up">
+                    <!-- Service 01: Web & API Security -->
+                    <div class="grid-item">
+                        <div class="grid-meta">Pillar // 01 · AppSec</div>
+                        <h3 class="grid-title">Web &amp; API Security</h3>
+                        <p class="grid-desc" style="margin-bottom: 1.5rem;">
+                            Rigorous manual code review and adversarial penetration testing for complex web applications and modern APIs (REST, GraphQL, gRPC). We target nuanced business logic bypasses, authorization flaws (BOLA / IDOR), broken object properties, SSRF, Deserialization RCEs, and advanced SQL injection vectors with zero false positives.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.45rem;">
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">REST / GraphQL / gRPC</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">BOLA &amp; IDOR Audits</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">OWASP API Top 10</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">Business Logic Flaws</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 02: AI Security -->
+                    <div class="grid-item">
+                        <div class="grid-meta">Pillar // 02 · Emerging Tech</div>
+                        <h3 class="grid-title">AI &amp; LLM Security</h3>
+                        <p class="grid-desc" style="margin-bottom: 1.5rem;">
+                            Advanced threat modeling and adversarial robustness verification for autonomous AI platforms, RAG systems, and vector databases. We discover and remediate sandbox escape vulnerabilities (e.g. Flowise CVE-2026-73484, Qdrant CVSS 9.1), runtime API key leakages (AutoGPT CVE-2026-22038), prompt injection escapes, and verify EU AI Act Article 15 compliance.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.45rem;">
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">Sandbox Escape Research</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">RAG &amp; Vector DB Security</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">Prompt Injection Analysis</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">EU AI Act Art. 15</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 03: Android Security -->
+                    <div class="grid-item">
+                        <div class="grid-meta">Pillar // 03 · Mobile</div>
+                        <h3 class="grid-title">Android Security</h3>
+                        <p class="grid-desc" style="margin-bottom: 1.5rem;">
+                            Full-lifecycle Android application security assessments led by Co-Founder Ainavilli Swamy Ganesh. Comprehensive APK reverse engineering, Smali/Java/Kotlin decompilation, inter-process communication (IPC) and Intent exposure auditing, insecure cryptographic storage analysis, and dynamic runtime instrumentation with Frida and Objection.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.45rem;">
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">APK Reverse Engineering</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">IPC &amp; Intent Exposure</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">Frida Dynamic Tampering</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">OWASP Mobile Top 10</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 04: OSS Security -->
+                    <div class="grid-item">
+                        <div class="grid-meta">Pillar // 04 · Supply Chain</div>
+                        <h3 class="grid-title">OSS &amp; Supply Chain Security</h3>
+                        <p class="grid-desc" style="margin-bottom: 1.5rem;">
+                            Deep vulnerability research and source code auditing for open-source repositories, critical digital infrastructure, and third-party dependencies. We verify Software Bills of Materials (SBOMs), detect upstream supply chain risks, and conduct responsible Coordinated Vulnerability Disclosures (CVD) with patch-ready pull requests and published NIST CVEs.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.45rem;">
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">Upstream Vulnerability Discovery</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">SBOM &amp; Supply Chain Audits</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">Coordinated CVE Disclosure</span>
+                            <span class="skill-pill" style="font-size: 0.72rem; padding: 0.35rem 0.75rem;">Patch-Ready Pull Requests</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -452,18 +534,23 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-logo-block">Aditya Security Labs</div>
+                    <div class="footer-logo-block">
+                        <img src="logo.jpg" alt="Aditya Security Labs Logo" class="footer-logo-img">
+                        <span>Aditya Security Labs</span>
+                    </div>
                     <p style="text-transform: none; font-size: 0.85rem; line-height: 1.6; font-family: var(--font-sans);">
-                        Specialized manual security source code auditing for web applications, Android mobile apps, and AI infrastructure. Identifying business logic vulnerabilities and authorization flaws before deployment.
+                        Specialized manual security source code auditing and vulnerability research across Web &amp; API Security, AI Infrastructure, Android Mobile Apps, and Open-Source Software (OSS). Identifying critical vulnerabilities before exploitation.
                     </p>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Company</h4>
                     <ul>
+                        <li><a href="#services">Security Services</a></li>
                         <li><a href="#advisory">Source Code Auditing</a></li>
                         <li><a href="#capabilities">Audit Methodology</a></li>
                         <li><a href="#operator">Leadership</a></li>
+                        <li><a href="#research">Verified CVE Research</a></li>
                         <li><a href="#contact">Request Audit</a></li>
                     </ul>
                 </div>
