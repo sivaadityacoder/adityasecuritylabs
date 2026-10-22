@@ -226,8 +226,8 @@
       highlights: [
         '<strong>Critical Zero-Days:</strong> <span class="badge-pill badge-critical">CVSS 9.8</span> FlowiseAI · <span class="badge-pill badge-high">CVSS 8.1</span> AutoGPT (CVE-2026-22038)',
         '<strong>Verified Research:</strong> <span class="badge-pill badge-verified">4 CVEs</span> <span class="badge-pill badge-verified">1 GHSA</span> vulnerability advisory',
-        '<strong>Commercial Auditing:</strong> Paid engagements with NIIS, Qdrant',
-        '<strong>National Infrastructure:</strong> Security acknowledgments from BSI Germany (CERT-Bund)'
+        '<strong>Bounty Awards:</strong> Paid bug bounty rewards from NIIS, Qdrant',
+        '<strong>National Infrastructure:</strong> Security research acknowledgments from BSI Germany (CERT-Bund)'
       ],
       link: 'https://www.linkedin.com/in/sivaaditya-panuganti-b67484316/'
     },
