@@ -11,6 +11,38 @@
 </head>
 <body>
 
+    <!-- HIGH-TECH EDITORIAL SIDE BORDERS / COORDINATE RAILS -->
+    <aside class="side-border-left" aria-hidden="true">
+        <div class="side-rail-track">
+            <span class="side-rail-crosshair">+</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-tag">LAT 52°31'12"N · ASL SEC // 01</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-crosshair">+</span>
+            <span class="side-rail-tag">NVD CVE DISCLOSURES · VERIFIED</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-crosshair">+</span>
+            <span class="side-rail-tag">MANUAL SOURCE CODE AUDIT</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-crosshair">+</span>
+        </div>
+    </aside>
+    <aside class="side-border-right" aria-hidden="true">
+        <div class="side-rail-track">
+            <span class="side-rail-crosshair">+</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-tag">LON 13°24'18"E · DEFENSE NODE</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-crosshair">+</span>
+            <span class="side-rail-tag">STRICT ZERO-RETENTION NDA</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-crosshair">+</span>
+            <span class="side-rail-tag">CONTINUOUS THREAT TELEMETRY</span>
+            <span class="side-rail-tick"></span>
+            <span class="side-rail-crosshair">+</span>
+        </div>
+    </aside>
+
     <nav>
         <a href="#hero" class="nav-logo">
             <img src="logo.jpg" alt="Aditya Security Labs Logo" class="brand-logo-img">
@@ -36,33 +68,40 @@
         
         <!-- HERO -->
         <section id="hero">
-            <!-- 8D REAL-TIME CYBER ATTACK DEFENSE GLOBE -->
-            <div class="hero-globe-wrap" aria-hidden="true">
-                <canvas id="earthCanvas"></canvas>
+            <!-- CHECK POINT STYLE REAL-TIME CYBER ATTACK THREATMAP GLOBE -->
+            <div class="hero-globe-wrap">
+                <canvas id="earthCanvas" aria-hidden="true"></canvas>
 
                 <!-- LIVE REAL EARTH ATTACK PROOF HUD OVERLAY -->
                 <div class="globe-threat-hud">
                     <div class="hud-header">
                         <span class="hud-live-pulse"></span>
-                        <span class="hud-title">REAL-TIME ATTACK MATRIX // LIVE CVE PROOFS</span>
+                        <span class="hud-title">LIVE THREATRADAR // VERIFIED CVE MATRIX</span>
                     </div>
                     <div class="hud-stats">
                         <div class="hud-stat-item">
-                            <span class="hud-label">RESEARCH PROOF GRID</span>
-                            <span class="hud-val hud-val-active">ONLINE · NVD VERIFIED</span>
+                            <span class="hud-label">GLOBAL SENSORS</span>
+                            <span class="hud-val hud-val-active">ACTIVE · NVD VERIFIED</span>
                         </div>
                         <div class="hud-stat-item">
                             <span class="hud-label">ATTACKS INTERCEPTED</span>
-                            <span class="hud-val hud-val-counter" id="hudAttackCount">148,294</span>
+                            <span class="hud-val hud-val-counter" id="hudAttackCount">148,342</span>
                         </div>
                     </div>
                     <div class="hud-feed" id="hudAttackFeed">
-                        <div class="hud-feed-line"><span style="color: #059669; font-weight: 600;">[LIVE PROOF]</span> <strong>Flowise</strong> · Python Sandbox Escape <span class="badge-pill badge-verified" style="font-size: 0.6rem; padding: 0.1rem 0.4rem;">CVE-2026-73484</span></div>
+                        <div class="hud-feed-line">
+                            <span style="color: #64748b; font-size: 0.65rem;">[LIVE]</span>
+                            <span style="color: #ef4444; font-weight: 500;">Beijing, CN</span>
+                            <span style="color: #94a3b8;">➔</span>
+                            <strong style="color: #0f172a;">Flowise Node</strong>
+                            <span style="color: #059669; font-weight: 600;">[DEFENDED]</span>
+                            <span class="badge-pill badge-verified" style="font-size: 0.58rem; padding: 0.1rem 0.35rem;">CVE-2026-73484</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="container fade-up" style="position: relative; z-index: 2;">
+            <div class="container fade-up" style="position: relative; z-index: 2; pointer-events: none;">
                 <span class="hero-pre"><span class="hero-pulse-led"></span> Real-Time Global Attack Intelligence &amp; AI Security</span>
                 <h1 class="hero-title">Securing mission-critical systems against <i>live cyber threats</i>.</h1>
                 <p class="hero-desc">
@@ -623,6 +662,7 @@
         <span>Chat on WhatsApp</span>
     </a>
 
+    <script src="three.min.js"></script>
     <script src="earth-globe.js"></script>
     <script src="app.js"></script>
 </body>
