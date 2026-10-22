@@ -236,8 +236,9 @@
       meta: 'Co-Founder & Head of Security Engineering',
       img: 'swamy_ganesh.jpg',
       objectPosition: 'center 20%',
-      desc: 'Co-Founder and Head of Security Engineering at Aditya Security Labs. Specializing in defensive security engineering, adversarial AI behavior analysis (WormGPT-type evasion), social-engineering threat modeling, and building custom analysis methodologies.',
+      desc: 'Co-Founder and Head of Security Engineering at Aditya Security Labs. Specializing in Android application security, defensive engineering, adversarial AI behavior analysis (WormGPT-type evasion), social-engineering threat modeling, and building custom analysis methodologies.',
       highlights: [
+        '<strong>Android & Mobile Application Security:</strong> In-depth APK reverse engineering, IPC/Intent vulnerability auditing, mobile malware analysis & secure runtime verification',
         '<strong>Malicious AI & LLM Threat Modeling:</strong> Hands-on lab research into WormGPT-style adversarial tools, threat behavior & blue-team defensive architectures',
         '<strong>Fraud & Social-Engineering Countermeasures:</strong> Real-world threat intelligence investigations, exposing identity-theft operations using custom analysis tools',
         '<strong>Defensive Security & Blue-Team SOC:</strong> Practical incident response mindset, attack surface reduction & defensive telemetry verification',
