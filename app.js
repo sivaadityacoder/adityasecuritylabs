@@ -222,9 +222,9 @@
       meta: 'Founder & Principal Architect',
       img: 'siva_aditya.png',
       objectPosition: 'center 15%',
-      desc: 'Lead Researcher and Principal Architect at Aditya Security Labs. Specializing in advanced vulnerability research, zero-day discovery, and the security architecture of autonomous AI agents.',
+      desc: 'Lead Researcher and Principal Architect at Aditya Security Labs. Specializing in advanced vulnerability research, zero-day discovery, and security architecture.',
       highlights: [
-        '<strong>Critical Zero-Days:</strong> <span class="badge-pill badge-critical">CVSS 9.8</span> FlowiseAI · <span class="badge-pill badge-high">CVSS 8.1</span> AutoGPT (CVE-2026-22038)',
+        '<strong>Critical Findings:</strong> <span class="badge-pill badge-critical">CVSS 9.1</span> Qdrant · <span class="badge-pill badge-high">CVSS 8.6</span> Flowise · <span class="badge-pill badge-high">CVSS 8.1</span> AutoGPT (CVE-2026-22038)',
         '<strong>Verified Research:</strong> <span class="badge-pill badge-verified">6 Published CVEs</span> <span class="badge-pill badge-verified">1 GHSA</span> vulnerability advisory',
         '<strong>Bounty Awards:</strong> Paid bug bounty rewards from NIIS, Qdrant',
         '<strong>National Infrastructure:</strong> Security research acknowledgments from BSI Germany (CERT-Bund)'
