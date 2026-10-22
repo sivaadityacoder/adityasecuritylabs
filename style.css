@@ -983,6 +983,71 @@ footer {
   transform: rotate(90deg);
 }
 
+/* ── CVE RESEARCH INSTITUTIONAL TABLE ── */
+.cve-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+}
+.cve-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  min-width: 680px;
+}
+.cve-table th {
+  background: var(--bg-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.cve-table td {
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.cve-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.cve-table tbody tr {
+  transition: background 0.2s ease;
+}
+.cve-table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.025);
+}
+.cve-link {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cve-link:hover {
+  text-decoration: underline;
+}
+.cve-project {
+  color: var(--text-main);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.cve-desc {
+  color: var(--text-body);
+  line-height: 1.5;
+  font-size: 0.88rem;
+}
+
 /* ── RESPONSIVE MEDIA QUERIES ── */
 @media (max-width: 900px) {
   .eu-ribbon-right { display: none; }

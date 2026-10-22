@@ -90,7 +90,7 @@
                         </p>
                         <div class="grid-desc" style="display: flex; flex-direction: column; gap: 0.85rem; font-weight: 300; margin-bottom: 1.8rem; font-size: 0.92rem;">
                             <div><strong style="color: var(--text-main); font-weight: 500;">Critical Findings:</strong> <span class="badge-pill badge-critical">CVSS 9.8</span> FlowiseAI · <span class="badge-pill badge-high">CVSS 8.1</span> AutoGPT (CVE-2026-22038)</div>
-                            <div><strong style="color: var(--text-main); font-weight: 500;">Verified Research:</strong> <span class="badge-pill badge-verified">4 CVEs</span> <span class="badge-pill badge-verified">1 GHSA</span> · <a href="blog-autogpt-cvss81.html" class="btn-link" style="font-size: 0.82rem;">Read disclosure →</a></div>
+                            <div><strong style="color: var(--text-main); font-weight: 500;">Verified Research:</strong> <span class="badge-pill badge-verified">6 Published CVEs</span> <span class="badge-pill badge-verified">1 GHSA</span> · <a href="#research" class="btn-link" style="font-size: 0.82rem;">Read disclosures →</a></div>
                             <div><strong style="color: var(--text-main); font-weight: 500;">Bounty Awards:</strong> NIIS, Qdrant | <strong style="color: var(--text-main); font-weight: 500;">Acknowledgments:</strong> BSI Germany</div>
                         </div>
                         <a href="https://www.linkedin.com/in/sivaaditya-panuganti-b67484316/" target="_blank" class="btn-link">LinkedIn Profile ↗</a>
@@ -159,6 +159,10 @@
                         <span class="skill-pill">DevSecOps Integration</span>
                         <span class="skill-pill">Docker Runtime Verification</span>
                         <span class="skill-pill">EU AI Act Compliance</span>
+                        <span class="skill-pill">Web Security</span>
+                        <span class="skill-pill">AI Security</span>
+                        <span class="skill-pill">OSS Services</span>
+                        <span class="skill-pill">Android Security</span>
                     </div>
                 </div>
             </div>
@@ -192,60 +196,105 @@
             </div>
         </section>
 
-        <!-- ZERO-DAYS -->
+        <!-- SELECTED CVE RESEARCH -->
         <section id="research">
             <div class="container">
                 <div class="section-header fade-up">
-                    <span class="section-pre">Zero-Days</span>
-                    <h2 class="section-title">Verified Impact</h2>
-                    <p class="section-mono" style="color: var(--accent); margin-top: 1rem;">5 Official Disclosures</p>
+                    <span class="section-pre">Verification References</span>
+                    <h2 class="section-title">Selected CVE Research</h2>
+                    <p class="section-mono" style="color: var(--accent); margin-top: 1rem;">6 Official NIST / NVD Disclosures</p>
+                    <p class="grid-desc" style="max-width: 760px; margin-top: 1rem;">
+                        The following records are linked directly to their NVD pages so that the affected product, vulnerability description, references, and available severity information can be checked independently.
+                    </p>
                 </div>
 
-                <div class="fade-up">
-                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22038" target="_blank" class="row-item" style="display: block;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-                            <div class="row-meta">CVSS 8.1 / AutoGPT</div>
-                            <div class="row-meta">CVE-2026-22038</div>
-                        </div>
-                        <div class="row-title">Secrets Leak via Logging</div>
-                        <div class="row-desc">Critical exposure of OpenAI API keys via unsanitized logging mechanisms in autonomous agents.</div>
-                    </a>
+                <!-- VERIFICATION REFERENCES QUICK LINKS -->
+                <div class="fade-up" style="margin-bottom: 2.5rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.85rem; font-weight: 500;">Verification References</div>
+                    <div class="skills-container" style="gap: 0.6rem;">
+                        <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-70383" target="_blank" class="skill-pill" style="font-family: var(--font-mono); font-size: 0.78rem;">NVD — CVE-2026-70383 ↗</a>
+                        <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-73484" target="_blank" class="skill-pill" style="font-family: var(--font-mono); font-size: 0.78rem;">NVD — CVE-2026-73484 ↗</a>
+                        <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22038" target="_blank" class="skill-pill" style="font-family: var(--font-mono); font-size: 0.78rem;">NVD — CVE-2026-22038 ↗</a>
+                        <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68621" target="_blank" class="skill-pill" style="font-family: var(--font-mono); font-size: 0.78rem;">NVD — CVE-2025-68621 ↗</a>
+                        <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67146" target="_blank" class="skill-pill" style="font-family: var(--font-mono); font-size: 0.78rem;">NVD — CVE-2025-67146 ↗</a>
+                        <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67147" target="_blank" class="skill-pill" style="font-family: var(--font-mono); font-size: 0.78rem;">NVD — CVE-2025-67147 ↗</a>
+                    </div>
+                </div>
 
-                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67146" target="_blank" class="row-item" style="display: block;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-                            <div class="row-meta">HIGH / Enterprise Rails</div>
-                            <div class="row-meta">CVE-2025-67146</div>
-                        </div>
-                        <div class="row-title">Database SQL Injection</div>
-                        <div class="row-desc">Paired attack chain enabling full database read/write access via complex SQL injection.</div>
-                    </a>
-
-                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67147" target="_blank" class="row-item" style="display: block;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-                            <div class="row-meta">HIGH / Enterprise Rails</div>
-                            <div class="row-meta">CVE-2025-67147</div>
-                        </div>
-                        <div class="row-title">Authentication Bypass</div>
-                        <div class="row-desc">Flaw in session validation allowing unauthenticated attackers to reach privileged admin endpoints.</div>
-                    </a>
-
-                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68621" target="_blank" class="row-item" style="display: block;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-                            <div class="row-meta">CVSS 7.4 / Trilium Notes</div>
-                            <div class="row-meta">CVE-2025-68621</div>
-                        </div>
-                        <div class="row-title">Timing Attack Auth Bypass</div>
-                        <div class="row-desc">Sophisticated timing attack against the authentication protocol yielding unauthorized access.</div>
-                    </a>
-
-                    <a href="https://github.com/advisories/GHSA-x58f-9m57-qc4m" target="_blank" class="row-item" style="display: block; border-bottom: 1px solid var(--border);">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-                            <div class="row-meta">CRITICAL / FlowiseAI</div>
-                            <div class="row-meta">GHSA-x58f-9m57</div>
-                        </div>
-                        <div class="row-title">Sandbox Escape</div>
-                        <div class="row-desc">Arbitrary code execution via complete sandbox escape in the LLM orchestration layer.</div>
-                    </a>
+                <!-- SELECTED CVE RESEARCH TABLE -->
+                <div class="cve-table-wrapper fade-up">
+                    <table class="cve-table">
+                        <thead>
+                            <tr>
+                                <th>CVE record</th>
+                                <th>Project</th>
+                                <th>Vulnerability</th>
+                                <th style="text-align: right;">Official proof</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-70383" target="_blank" class="cve-link">CVE-2026-70383</a>
+                                </td>
+                                <td><strong class="cve-project">DigiDoc4 Client</strong></td>
+                                <td class="cve-desc">Path traversal / arbitrary file overwrite, CWE-22</td>
+                                <td style="text-align: right;">
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-70383" target="_blank" class="btn-link" style="font-size: 0.82rem; white-space: nowrap;">NVD record ↗</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-73484" target="_blank" class="cve-link">CVE-2026-73484</a>
+                                </td>
+                                <td><strong class="cve-project">Flowise</strong></td>
+                                <td class="cve-desc">Python sandbox escape through insufficient restrictions on native Pandas methods</td>
+                                <td style="text-align: right;">
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-73484" target="_blank" class="btn-link" style="font-size: 0.82rem; white-space: nowrap;">NVD record ↗</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22038" target="_blank" class="cve-link">CVE-2026-22038</a>
+                                </td>
+                                <td><strong class="cve-project">AutoGPT Platform</strong></td>
+                                <td class="cve-desc">Plaintext logging of API keys and authentication secrets in the Stagehand integration, CWE-532</td>
+                                <td style="text-align: right;">
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22038" target="_blank" class="btn-link" style="font-size: 0.82rem; white-space: nowrap;">NVD record ↗</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68621" target="_blank" class="cve-link">CVE-2025-68621</a>
+                                </td>
+                                <td><strong class="cve-project">Trilium Notes</strong></td>
+                                <td class="cve-desc">Timing attack against sync authentication that could enable HMAC recovery, CWE-208</td>
+                                <td style="text-align: right;">
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68621" target="_blank" class="btn-link" style="font-size: 0.82rem; white-space: nowrap;">NVD record ↗</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67146" target="_blank" class="cve-link">CVE-2025-67146</a>
+                                </td>
+                                <td><strong class="cve-project">GYM-MANAGEMENT-SYSTEM 1.0</strong></td>
+                                <td class="cve-desc">Multiple SQL injection vulnerabilities with possible data extraction, authentication bypass, and database modification</td>
+                                <td style="text-align: right;">
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67146" target="_blank" class="btn-link" style="font-size: 0.82rem; white-space: nowrap;">NVD record ↗</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67147" target="_blank" class="cve-link">CVE-2025-67147</a>
+                                </td>
+                                <td><strong class="cve-project">Gym-Management-System-PHP 1.0</strong></td>
+                                <td class="cve-desc">Multiple SQL injection vulnerabilities that could enable authentication bypass, data modification, deletion, and privilege escalation</td>
+                                <td style="text-align: right;">
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-67147" target="_blank" class="btn-link" style="font-size: 0.82rem; white-space: nowrap;">NVD record ↗</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -322,12 +371,6 @@
                         <p class="grid-desc" style="max-width: 400px; margin-bottom: 3rem;">
                             All engagements begin with a confidential consultation to understand your application architecture, technology stack, and security objectives. Strict NDA provided before any code access.
                         </p>
-                        
-                        <!-- URGENCY / SCARCITY -->
-                        <div style="margin-bottom: 2rem; padding: 1rem; border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); border-radius: 4px;">
-                            <span style="color: #ef4444; margin-right: 0.5rem; font-size: 0.8rem;">🔴</span>
-                            <strong style="color: var(--text-main); font-weight: 500;">Q3 2026 Availability:</strong> 2 advisory slots remaining. Next engagement start: <strong style="color: #ef4444;">August 25, 2026.</strong> One researcher. Direct work.
-                        </div>
 
                         <a href="mailto:adityasecuritylabs@gmail.com" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px;">adityasecuritylabs@gmail.com</a>
                     </div>
