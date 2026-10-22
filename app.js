@@ -236,12 +236,12 @@
       meta: 'Co-Founder & Head of Security Engineering',
       img: 'swamy_ganesh.jpg',
       objectPosition: 'center 20%',
-      desc: 'Co-Founder and Head of Security Engineering at Aditya Security Labs. Specializing in secure systems architecture, automated code review pipelines, and scaling threat modeling for modern enterprise infrastructure and autonomous AI deployments.',
+      desc: 'Co-Founder and Head of Security Engineering at Aditya Security Labs. Specializing in defensive security engineering, adversarial AI behavior analysis (WormGPT-type evasion), social-engineering threat modeling, and building custom analysis methodologies.',
       highlights: [
-        '<strong>Systems Architecture & DevSecOps:</strong> <span class="badge-pill badge-verified">AppSec</span> <span class="badge-pill badge-verified">Threat Modeling</span> Automated security gates & zero-trust IAM',
-        '<strong>Cloud & Runtime Defense:</strong> Container sandboxing, Kubernetes cluster hardening & microservice boundary testing',
-        '<strong>Institutional Standards:</strong> Technical control implementation for <span class="badge-pill badge-verified">EU AI Act Art. 15</span> & NIS2 directive compliance',
-        '<strong>Assessment Delivery:</strong> High-assurance source code audits, rapid-response architecture reviews & remediation verification'
+        '<strong>Malicious AI & LLM Threat Modeling:</strong> Hands-on lab research into WormGPT-style adversarial tools, threat behavior & blue-team defensive architectures',
+        '<strong>Fraud & Social-Engineering Countermeasures:</strong> Real-world threat intelligence investigations, exposing identity-theft operations using custom analysis tools',
+        '<strong>Defensive Security & Blue-Team SOC:</strong> Practical incident response mindset, attack surface reduction & defensive telemetry verification',
+        '<strong>Industry Track Record:</strong> 1+ year Ethical Hacking tenure at TheWebsiteMakers, with specialized cyber defense project delivery across ShadowFox, Navodita & Cyberdosti'
       ],
       link: 'https://www.linkedin.com/in/ainavilli-swamy-ganesh-7870112a8/'
     }
