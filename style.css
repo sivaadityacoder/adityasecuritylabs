@@ -1048,6 +1048,36 @@ footer {
   font-size: 0.88rem;
 }
 
+/* ── FLOATING WHATSAPP BUTTON ── */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 50px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+  z-index: 99;
+  transition: all 0.3s var(--ease-smooth);
+}
+.floating-whatsapp:hover {
+  background: #20ba59;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  color: #ffffff;
+}
+.floating-whatsapp svg {
+  flex-shrink: 0;
+}
+
 /* ── RESPONSIVE MEDIA QUERIES ── */
 @media (max-width: 900px) {
   .eu-ribbon-right { display: none; }
@@ -1075,4 +1105,11 @@ footer {
   .footer-grid { grid-template-columns: 1fr; }
   .dossier-header { font-size: 0.58rem; padding: 0.25rem 0.5rem; }
   #hero { padding-top: calc(34px + var(--nav-h) + 4vh); }
+  .floating-whatsapp span { display: none; }
+  .floating-whatsapp {
+    padding: 0.85rem;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+  }
 }
