@@ -51,7 +51,12 @@
         
         <!-- HERO -->
         <section id="hero">
-            <div class="container fade-up">
+            <!-- 3D SOVEREIGN ROTATING EARTH GLOBE -->
+            <div class="hero-globe-wrap" aria-hidden="true">
+                <canvas id="earthCanvas"></canvas>
+            </div>
+
+            <div class="container fade-up" style="position: relative; z-index: 2;">
                 <span class="hero-pre">Boutique Security Research &amp; Sovereign AI Defense</span>
                 <h1 class="hero-title">Securing elite AI infrastructure with <i>precision</i>.</h1>
                 <p class="hero-desc">
@@ -612,6 +617,7 @@
         <span>Chat on WhatsApp</span>
     </a>
 
+    <script src="earth-globe.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
